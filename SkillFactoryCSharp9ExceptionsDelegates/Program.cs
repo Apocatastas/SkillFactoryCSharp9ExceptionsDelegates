@@ -4,26 +4,27 @@
     class Program
 
     /// <summary>
-    ///Создайте консольное решение, в котором реализуйте конструкцию Try/Catch/Finally <summary>
-    /// для обработки исключения ArgumentOutOfRangeException.
-    /// В случае исключения отобразите в консоль сообщение об ошибке.
+    ///Создайте консольное решение, в котором реализуйте конструкцию Try/Catch/Finally
+    ///для обработки исключения RankException. В случае исключения отобразите в консоль
+    ///тип исключения (через метод GetType()).
     /// </summary>
 
     {
         static void Main(string[] args)
         {
-            var list = new List<string>();
             try
             {
-                Console.WriteLine(list[0]);
+                throw new RankException("Попався ранк эксепшен");
             }
-            catch (ArgumentOutOfRangeException e)
+
+            catch (RankException ex)
             {
-                Console.WriteLine("это уже эребор");
+                Console.WriteLine(ex.GetType());
             }
+
             finally
             {
-                Console.ReadKey();
+                Console.Read();
             }
         }
     }
