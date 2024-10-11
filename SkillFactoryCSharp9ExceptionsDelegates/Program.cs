@@ -1,3 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace ExceptionsDelegates
 
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Exception exception = new Exception();
+            exception.Data.Add("Создано: ", DateTime.Now);
+        }
+    }
+}
