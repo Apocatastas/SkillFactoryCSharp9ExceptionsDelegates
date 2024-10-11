@@ -6,8 +6,9 @@
         static void Main(string[] args)
         {
 
-            Exception exception = new Exception();
-            exception.Data.Add("Создано: ", DateTime.Now);
+            Exception ex = new Exception("Exception something went wrong");
+            ex.HelpLink = "https://github.com/Apocatastas/SkillFactoryCSharp9ExceptionsDelegates";
+            throw ex;
         }
     }
 }
