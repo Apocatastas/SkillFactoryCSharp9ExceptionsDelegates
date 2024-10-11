@@ -16,6 +16,12 @@
 # Mono auto generated files
 mono_crash.*
 
+*.DS_Store
+._*
+
+SkillFactoryCSharp9ExceptionsDelegates/bin/
+SkillFactoryCSharp9ExceptionsDelegates/obj/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
