@@ -3,22 +3,13 @@
 namespace ExceptionsDelegates
 
 {
-    /// <summary>
-    /// Существует консольное решение, которое выводит случайное целое число
-    /// в диапазоне от 0 до 100 и отображает результат в консольное сообщение:
-    /// </summary>
     class Program
     {
-        delegate int RandomNumberDelegate();
+        delegate void ShowMessageDelegate(string _message);
         static void Main(string[] args)
         {
-            RandomNumberDelegate randomNumberDelegate = delegate
-            {
-                return new Random().Next(0, 100);
-            };
-            
-            int result = randomNumberDelegate.Invoke();
-            Console.WriteLine(result);
+            ShowMessageDelegate showMessageDelegate = (string _message) => Console.WriteLine(_message);
+            showMessageDelegate.Invoke("Hello World!");
             Console.Read();
         }
     }
