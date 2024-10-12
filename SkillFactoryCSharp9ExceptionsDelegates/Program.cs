@@ -3,28 +3,34 @@
 namespace ExceptionsDelegates
 
 {
-    class Car { }
-    class Lexus : Car { }
+    class Parent { }
+    class Child : Parent { }
 
     class Program
     {
-        public delegate Car HandlerMethod();
+        public delegate Parent HandlerMethod();
+        delegate void ChildInfo(Child child);
 
-        public static Car CarHandler()
+        public static Parent ParentHandler()
         {
             return null;
         }
 
-        public static Lexus LexusHandler()
+        public static Child ChildHandler()
         {
             return null;
         }
 
         static void Main(string[] args)
         {
-            HandlerMethod handlerLexus = LexusHandler;
-
+            ChildInfo childInfo = GetParentInfo;
+            childInfo.Invoke(new Child());
             Console.Read();
+        }
+
+        public static void GetParentInfo(Parent p)
+        {
+            Console.WriteLine(p.GetType());
         }
     }
 }
