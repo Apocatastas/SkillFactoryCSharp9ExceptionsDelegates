@@ -15,6 +15,8 @@
         {
             Substraction substraction = Substract;
             Console.Write(substraction.Invoke(11, 10));
+            Console.WriteLine();
+            Console.Write(substraction(11, 10));
             Console.ReadKey();
         }
 
