@@ -1,34 +1,29 @@
 ﻿namespace ExceptionsDelegates
 
 {
-    /// <summary>
-    /// Создайте консольное приложение, в котором есть функция,
-    /// принимающая на вход два числа int, и возвращающая результат
-    /// int вычитания второго числа из первого. Вызовите эту функцию
-    /// в классе Main при помощи делегата и отобразите результат в консольном сообщении.
-    /// </summary>
-    
-    public class Program
+    class Program
     {
-        public delegate int Substraction(int a, int b);
+        delegate void CalculateDelegate(int a, int b);
         static void Main(string[] args)
         {
-            Substraction substraction = Substract;
-            substraction += Addition;
-            substraction.Invoke(11, 10);
-            Console.ReadKey();
+            CalculateDelegate calcDelegate = CalculateOne;
+
+            calcDelegate += CalculateTwo;
+            calcDelegate -= CalculateTwo;
+
+            calcDelegate.Invoke(100, 30);
+
+            Console.Read();
         }
 
-        static int Substract(int a, int b)
+        static void CalculateOne(int a, int b)
         {
-            Console.WriteLine("Результат вычитания: {0} - {1} = {2}", a, b, a-b);
-            return a - b;
+            Console.WriteLine(a - b);
         }
 
-        static int Addition(int a, int b)
+        static void CalculateTwo(int a, int b)
         {
-            Console.WriteLine("Результат сложения: {0} + {1} = {2}", a, b, a+b);
-            return a + b;
+            Console.WriteLine(a + b);
         }
     }
 }
