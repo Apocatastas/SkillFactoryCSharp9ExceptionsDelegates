@@ -14,16 +14,21 @@
         static void Main(string[] args)
         {
             Substraction substraction = Substract;
-            Console.Write(substraction.Invoke(11, 10));
-            Console.WriteLine();
-            Console.Write(substraction(11, 10));
+            substraction += Addition;
+            substraction.Invoke(11, 10);
             Console.ReadKey();
         }
 
         static int Substract(int a, int b)
         {
-            Console.Write("Результат вычитания: {0} - {1} = ", a, b);
+            Console.WriteLine("Результат вычитания: {0} - {1} = {2}", a, b, a-b);
             return a - b;
+        }
+
+        static int Addition(int a, int b)
+        {
+            Console.WriteLine("Результат сложения: {0} + {1} = {2}", a, b, a+b);
+            return a + b;
         }
     }
 }
