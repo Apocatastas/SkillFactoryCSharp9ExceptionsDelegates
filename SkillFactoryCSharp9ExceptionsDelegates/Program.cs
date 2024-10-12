@@ -1,31 +1,27 @@
 ﻿namespace ExceptionsDelegates
 
 {
-    class Program
-
     /// <summary>
-    ///Создайте консольное решение, в котором реализуйте конструкцию Try/Catch/Finally
-    ///для обработки исключения RankException. В случае исключения отобразите в консоль
-    ///тип исключения (через метод GetType()).
+    /// Создайте консольное приложение, в котором есть функция,
+    /// принимающая на вход два числа int, и возвращающая результат
+    /// int вычитания второго числа из первого. Вызовите эту функцию
+    /// в классе Main при помощи делегата и отобразите результат в консольном сообщении.
     /// </summary>
-
+    
+    public class Program
     {
+        public delegate int Substraction(int a, int b);
         static void Main(string[] args)
         {
-            try
-            {
-                throw new RankException("Попався ранк эксепшен");
-            }
+            Substraction substraction = Substract;
+            Console.Write(substraction.Invoke(11, 10));
+            Console.ReadKey();
+        }
 
-            catch (RankException ex)
-            {
-                Console.WriteLine(ex.GetType());
-            }
-
-            finally
-            {
-                Console.Read();
-            }
+        static int Substract(int a, int b)
+        {
+            Console.Write("Результат вычитания: {0} - {1} = ", a, b);
+            return a - b;
         }
     }
 }
