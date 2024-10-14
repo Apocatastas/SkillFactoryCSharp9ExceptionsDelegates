@@ -5,6 +5,10 @@ VisualStudioVersion = 25.0.1706.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillFactoryCSharp9ExceptionsDelegates", "SkillFactoryCSharp9ExceptionsDelegates\SkillFactoryCSharp9ExceptionsDelegates.csproj", "{18F3B929-7C05-4737-8F6B-B167D7C79159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Task1\Task1.csproj", "{4CF82177-46C0-4031-A011-F175EA01DE9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{9ABDF19B-03AA-4D02-868E-7D53E4F68140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{18F3B929-7C05-4737-8F6B-B167D7C79159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F3B929-7C05-4737-8F6B-B167D7C79159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F3B929-7C05-4737-8F6B-B167D7C79159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF82177-46C0-4031-A011-F175EA01DE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF82177-46C0-4031-A011-F175EA01DE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF82177-46C0-4031-A011-F175EA01DE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF82177-46C0-4031-A011-F175EA01DE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABDF19B-03AA-4D02-868E-7D53E4F68140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABDF19B-03AA-4D02-868E-7D53E4F68140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABDF19B-03AA-4D02-868E-7D53E4F68140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABDF19B-03AA-4D02-868E-7D53E4F68140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
