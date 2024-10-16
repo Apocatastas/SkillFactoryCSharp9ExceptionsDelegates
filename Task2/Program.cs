@@ -5,7 +5,7 @@ namespace ExceptionsDelegates
 {
     /// <summary>
     /// ✓ Создайте консольное приложение, в котором будет происходить сортировка списка фамилий из пяти человек.
-    ///   Сортировка должна происходить при помощи события.
+    /// ✓ Сортировка должна происходить при помощи события.
     /// ✓ Сортировка происходит при введении пользователем либо числа 1 (А-Я), либо числа 2 (Я-А).
     /// ✓ Дополнительно реализуйте проверку введённых данных от пользователя
     ///   через конструкцию TryCatchFinally с использованием собственного типа исключения.
@@ -13,6 +13,8 @@ namespace ExceptionsDelegates
 
     class Program
     {
+        static byte param = 0;
+
         public static string[] GetList()
         {
             string pattern = "^[А-Я][a-яё]*$";
@@ -39,36 +41,16 @@ namespace ExceptionsDelegates
             return strs;
         }
 
-        public static byte GetParam()
+        public static void PrintLastNames(string[] lastNameList, byte param)
         {
-            byte p = 0;
-
-            try
-            {
-
-            }
-            catch (Exception exp)
-            {
-                Console.WriteLine("Нам нужно значение 1 или 2");
-            }
-            finally
-            {
-
-            }
-
-            return p;
-        }
-
-        static void PrintLastNames(string[] lastNameList, byte param)
-        {
-            if (param == 1)
+            if (param == 2)
             {
                 foreach (string item in lastNameList.OrderDescending())
                 {
                     Console.WriteLine(item);
                 }
             }
-            else if (param == 2)
+            else if (param == 1)
             {
                 foreach (string item in lastNameList.OrderBy(x => x))
                 {
@@ -76,13 +58,19 @@ namespace ExceptionsDelegates
                 }
             }
         }
-       
+
+        // перехватчик событий
+        public static void eventHandler_OnKeyPressed()
+        {
+          param = Convert.ToByte(Console.ReadLine());
+        }
 
         static void Main(string[] args)
         {
-            byte param = 0;
+            Task2.MyEventHandler eventHandler = new();
+            eventHandler.SortKeyPressed += eventHandler_OnKeyPressed;
             string[] lastNameList = GetList();
-            param = GetParam();
+            eventHandler.StartListening();
             PrintLastNames(lastNameList, param);
             Console.Read();
         }
